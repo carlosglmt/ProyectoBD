@@ -1,10 +1,11 @@
 --@Autores: Andrés López Martínez y Carlos Gamaliel Morales Téllez
 --@Fecha creación: 31/05/2019
+--@Descripción: Creacion de usuarios, roles, asignacion de permisos
 
 whenever sqlerror exit;
 
 prompt Conectando como usuario sys
-connect sys as sysdba
+connect sys/system as sysdba
 
 prompt Creando al usuario lm_proy_invitado
 create user lm_proy_invitado
