@@ -2,6 +2,8 @@
 --@Fecha creación: 02/06/2019
 --@Descripción: Tablas temporales Virtual Travel
 
+connect lm_proy_admin/admin
+
 create global temporary table temp_auto (
   auto_id number(10,0) not null, 
   placa varchar2(10) not null,
