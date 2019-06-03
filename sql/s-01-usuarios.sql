@@ -2,8 +2,6 @@
 --@Fecha creación: 31/05/2019
 --@Descripción: Creacion de usuarios, roles, asignacion de permisos
 
-whenever sqlerror exit;
-
 prompt Conectando como usuario sys
 connect sys/system as sysdba
 
