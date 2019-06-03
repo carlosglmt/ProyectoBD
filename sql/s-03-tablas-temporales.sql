@@ -24,3 +24,13 @@ create global temporary table temp_conductor (
   comentario varchar2(500),
   calificacion number(1,0)
 ) on commit delete rows;
+
+create global temporary table temp_ganancia(
+  usuario_id number(10,0) not null,
+  nombre varchar2(40) not null, 
+  apellido_paterno varchar2(40) not null, 
+  num_licencia varchar2(8) not null, 
+  num_cedula varchar2(18) not null,
+  foto blob not null, 
+  ganancia number(10,2) not null
+) on commit delete rows;
