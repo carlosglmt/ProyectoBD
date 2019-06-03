@@ -97,8 +97,7 @@ create table auto (
 	constraint auto_usuario_id_fk foreign key (usuario_id)
   references usuario (usuario_id),
 	constraint auto_ubicacion_id foreign key (ubicacion_id)
-  references ubicacion (ubicacion_id),
-  constraint auto_anio_chk check(extract(year from sysdate) - anio <= 5)
+  references ubicacion (ubicacion_id)
 );
 
 create table factura (
