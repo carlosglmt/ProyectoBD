@@ -19,7 +19,7 @@ create table auto_recomendado(
   marca varchar2(20),
   modelo varchar2(20),
   anio number(4,0),
-  razon varchar2(300),
+  razon varchar2(256),
   precio number(8,2)
   )
 organization external(
@@ -46,8 +46,11 @@ Prompt Creando directorio /tmp/bases
 Prompt Cambiando permisos
 !chmod 777 /tmp/bases
 
-Prompt copiando archivo csv a /tmp/bases
+Prompt Copiando archivo csv a /tmp/bases
 !cp auto_recomendado.txt /tmp/bases
 
-Prompt mostrando los datos
+Prompt Mostrando los datos
+col marca format a10
+col modelo format a15
+col razon format a50
 select * from auto_recomendado;
