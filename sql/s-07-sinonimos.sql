@@ -4,6 +4,7 @@
 
 connect sys/system as sysdba
 
+
 create or replace public synonym info_auto 
 	for lm_proy_admin.auto;
 create or replace public synonym info_modelo 
@@ -11,11 +12,11 @@ create or replace public synonym info_modelo
 create or replace public synonym info_marca
 	for lm_proy_admin.marca;
 
-connect lm_proy_admin/admin
 
-grant select on cliente to lm_proy_invitado;
-grant select on conductor to lm_proy_invitado;
-grant select on administrador to lm_proy_invitado;
+grant select on lm_proy_admin.cliente to lm_proy_invitado;
+grant select on lm_proy_admin.conductor to lm_proy_invitado;
+grant select on lm_proy_admin.administrador to lm_proy_invitado;
+grant create synonym to lm_proy_invitado;
 
 connect lm_proy_invitado/invitado
 
@@ -29,16 +30,16 @@ create or replace synonym administrador_inv
 connect lm_proy_admin/admin
 
 set serveroutput on
-
+declare 
 cursor cur_tablas is 
 	select table_name 
 	from user_tables;
 
 begin 
 	for r in cur_tablas loop 
-		execute immediate "create or replace synonym XX_"
+		execute immediate 'create or replace synonym XX_'
 			|| r.table_name
-			|| " for lm_proy_admin."
+			|| ' for lm_proy_admin.'
 			|| r.table_name;
 	end loop; 
 end;

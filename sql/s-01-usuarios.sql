@@ -23,6 +23,7 @@ create role rol_invitado;
 
 grant create session,create table,
 	create view,create synonym,
+	create public synonym,
 	create trigger,create sequence,
 	create procedure 
 	to rol_admin;
