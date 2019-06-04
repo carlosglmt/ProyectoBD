@@ -27,7 +27,7 @@ create global temporary table temp_conductor (
   calificacion number(1,0)
 ) on commit delete rows;
 
-create global temporary table temp_ganancia(
+create global temporary table temp_ganancia (
   usuario_id number(10,0) not null,
   nombre varchar2(40) not null, 
   apellido_paterno varchar2(40) not null, 

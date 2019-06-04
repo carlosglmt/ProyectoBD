@@ -4,7 +4,6 @@
 
 connect lm_proy_admin/admin
 
-Prompt Creando secuencia seq_visa
 create sequence usuario_seq
   start with 1
   increment by 1
