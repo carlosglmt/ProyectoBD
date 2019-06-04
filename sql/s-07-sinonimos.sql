@@ -2,6 +2,8 @@
 --@Fecha creación: 03/06/2019
 --@Descripción: Creación de sinónimos
 
+connect sys as sydba / system
+
 create or replace public synonym info_auto 
 	for lm_proy_admin.auto;
 create or replace public synonym info_modelo 
@@ -9,17 +11,22 @@ create or replace public synonym info_modelo
 create or replace public synonym info_marca
 	for lm_proy_admin.marca;
 
-grant select on cliente to lm_invitado_proy;
-grant select on conductor to lm_invitado_proy;
-grant select on administrador to lm_invitado_proy;
+connect lm_proy_admin/admin
 
-create or replace private synonym cliente_inv
-	for lm_proy_invitado.cliente;
-create or replace private synonym conductor_inv
-	for lm_proy_invitado.conductor;
-create or replace private synonym administrador_inv
-	for lm_proy_invitado.administrador;
+grant select on cliente to lm_proy_invitado;
+grant select on conductor to lm_proy_invitado;
+grant select on administrador to lm_proy_invitado;
 
+connect lm_proy_invitato/invitado
+
+create or replace synonym cliente_inv
+	for lm_proy_admin.cliente;
+create or replace synonym conductor_inv
+	for lm_proy_admin.conductor;
+create or replace synonym administrador_inv
+	for lm_proy_admin.administrador;
+
+connect lm_proy_admin/admin
 
 set serveroutput on
 
