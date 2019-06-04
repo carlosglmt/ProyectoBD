@@ -2,6 +2,9 @@
 --@Fecha creación: 03/06/2019
 --@Descripción: Creación de sinónimos Virtual Travel
 
+connect sys/system as sysdba
+grant create synonym to lm_proy_invitado
+
 connect lm_proy_admin/admin
 
 create or replace public synonym status_viaje 
