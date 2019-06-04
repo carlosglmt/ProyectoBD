@@ -14,6 +14,3 @@ create unique index conductor_num_cedula_iuk
   on conductor(num_cedula);
 create unique index tarjeta_num_tarjeta_iuk
   on tarjeta(num_tarjeta);
-create unique index pago_num_pagos_iuk
-  on pago(usuario_id,folio);
-
