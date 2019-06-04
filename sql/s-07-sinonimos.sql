@@ -1,6 +1,6 @@
 --@Autores:Andrés López Martínez y Carlos Gamaliel Morales Téllez
 --@Fecha creación: 03/06/2019
---@Descripción: Creación de sinónimos
+--@Descripción: Creación de sinónimos Virtual Travel
 
 create or replace public synonym info_auto 
 	for lm_proy_admin.auto;

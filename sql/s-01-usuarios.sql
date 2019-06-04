@@ -1,6 +1,6 @@
 --@Autores: Andrés López Martínez y Carlos Gamaliel Morales Téllez
 --@Fecha creación: 31/05/2019
---@Descripción: Creacion de usuarios, roles, asignacion de permisos
+--@Descripción: Creacion de usuarios, roles, asignacion de permisos Virtual Travel
 
 prompt Conectando como usuario sys
 connect sys/system as sysdba
