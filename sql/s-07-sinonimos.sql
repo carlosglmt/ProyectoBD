@@ -1,8 +1,12 @@
 --@Autores:Andrés López Martínez y Carlos Gamaliel Morales Téllez
 --@Fecha creación: 03/06/2019
---@Descripción: Creación de sinónimos
+--@Descripción: Creación de sinónimos Virtual Travel
 
+<<<<<<< HEAD
 connect sys as sysdba
+=======
+connect sys/system as sysdba
+>>>>>>> 8938ab61a645f31c971c145a9a9c115ba0fe8b0f
 
 create or replace public synonym info_auto 
 	for lm_proy_admin.auto;
