@@ -50,7 +50,7 @@ create table conductor(
 
 create table cliente (
 	usuario_id number(10,0) not null,
-	fecha_registro date not null default sysdate, 
+	fecha_registro date default sysdate not null, 
 	num_celular numeric(13,0) not null,
 	constraint cliente_usuario_id_fk foreign key (usuario_id) 
 	references usuario(usuario_id),
@@ -80,7 +80,7 @@ create table ubicacion (
 	ubicacion_id number(10,0) not null, 
 	longitud number(10,7) not null,
 	latitud number(10,7) not null, 
-	disponible number(1,0) not null default 1,
+	disponible number(1,0) default 1 not null,
 	constraint ubicacion_pk primary key (ubicacion_id),
   constraint ubicacion_disponible_chk check(disponible in (0,1))
 );
@@ -103,7 +103,7 @@ create table auto (
 
 create table factura (
 	factura_id number(10,0) not null, 
-	fecha date not null default sysdate, 
+	fecha date default sysdate not null, 
 	importe number(7,2) not null, 
 	xml blob not null, 
 	constraint factura_pk primary key (factura_id)
@@ -124,12 +124,12 @@ create table viaje (
 	longitud_destino number(10,7) not null,
 	importe number(6,2) not null,
   impuesto as (importe*0.16) virtual,
-	hora_inicio date not null default sysdate,
+	hora_inicio date default sysdate not null,
 	hora_fin date,
 	propina number(6,2),
 	comentario varchar2(500),
 	calificacion number(1,0),
-	fecha_status date not null default sysdate, 
+	fecha_status date default sysdate not null, 
 	usuario_id number(10,0) not null, 
 	auto_id number(10,0) not null, 
 	factura_id number(10,0), 
@@ -148,7 +148,7 @@ create table viaje (
 
 create table historico_status_viaje (
 	historico_status_viaje_id number(10,0) not null,
-	fecha_status date not null default sysdate,
+	fecha_status date default sysdate not null,
 	viaje_id number(10,0) not null,
 	status_viaje_id number(10,0) not null,
 	constraint historico_status_viaje_pk primary key (historico_status_viaje_id),
@@ -184,7 +184,7 @@ create table pago (
 	usuario_id number(10,0)	not null,
 	folio number(8,0) not null, 
 	monto number(8,2) not null, 
-	fecha date not null default sysdate, 
+	fecha date default sysdate not null, 
 	constraint pago_usuario_id_fk foreign key (usuario_id)
 	references conductor(usuario_id),
 	constraint pago_pk primary key (usuario_id,folio)
