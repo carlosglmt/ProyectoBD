@@ -6,26 +6,26 @@ connect sys/system as sysdba
 
 
 create or replace public synonym info_auto 
-	for lm_proy_admin.auto;
+	for lm_proy_admin.status_viaje;
 create or replace public synonym info_modelo 
 	for lm_proy_admin.modelo;
 create or replace public synonym info_marca
 	for lm_proy_admin.marca;
 
 
-grant select on lm_proy_admin.cliente to lm_proy_invitado;
-grant select on lm_proy_admin.conductor to lm_proy_invitado;
-grant select on lm_proy_admin.administrador to lm_proy_invitado;
+grant select on lm_proy_admin.modelo to lm_proy_invitado;
+grant select on lm_proy_admin.marca to lm_proy_invitado;
+grant select on lm_proy_admin.status_viaje to lm_proy_invitado;
 grant create synonym to lm_proy_invitado;
 
 connect lm_proy_invitado/invitado
 
 create or replace synonym cliente_inv
-	for lm_proy_admin.cliente;
+	for lm_proy_admin.modelo;
 create or replace synonym conductor_inv
-	for lm_proy_admin.conductor;
+	for lm_proy_admin.marca;
 create or replace synonym administrador_inv
-	for lm_proy_admin.administrador;
+	for lm_proy_admin.status_viaje;
 
 connect lm_proy_admin/admin
 
