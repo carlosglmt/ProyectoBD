@@ -5,7 +5,7 @@
 connect sys/system as sysdba
 
 
-create or replace public synonym info_auto 
+create or replace public synonym info_status_viaje 
 	for lm_proy_admin.status_viaje;
 create or replace public synonym info_modelo 
 	for lm_proy_admin.modelo;
