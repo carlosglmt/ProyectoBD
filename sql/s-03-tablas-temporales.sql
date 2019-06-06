@@ -4,14 +4,19 @@
 
 connect lm_proy_admin/admin
 
---tabla funciona como buffer entre auto y ext_auto
+--Esta tabla funciona como buffer entre auto y ext_auto.
+--Se creará una tabla externa con registros de autos que pueden o no cumplir
+--con las reglas de negocio. Luego estos registros se insertán en la tabla
+--temporal, activando el trigger s-11-tr-valida-auto.sql. Los registros que no
+--cumplan con las reglas no serán insertados. Luego se copian todos los
+--registros de temp_auto a auto.
 create global temporary table temp_auto (
   auto_id number(10,0) not null, 
   num_placas varchar2(10) not null,
   anio number(4,0) not null,
   usuario_id number(10,0) not null,
   modelo_id number(10,0) not null, 
-  ubicacion_id number(10,0) not null
+  ubicacion_id number(10,0)
 ) on commit delete rows;
 
 --tabla contiene resultados estadisticos de los viajes de un usuario

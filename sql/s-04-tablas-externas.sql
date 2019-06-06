@@ -84,3 +84,5 @@ col marca format a10
 col modelo format a15
 col razon format a50
 select * from auto_recomendado;
+Prompt _________________________________________________________
+select * from ext_auto;
