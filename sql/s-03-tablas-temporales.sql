@@ -4,35 +4,21 @@
 
 connect lm_proy_admin/admin
 
+--tabla funciona como buffer entre auto y ext_auto
 create global temporary table temp_auto (
   auto_id number(10,0) not null, 
-  placa varchar2(10) not null,
+  num_placas varchar2(10) not null,
   anio number(4,0) not null,
-  nombre_modelo varchar2(40) not null, 
-  nombre_marca varchar2(40) not null,
-  categoria_marca number(1,0) not null
+  usuario_id number(10,0) not null,
+  modelo_id number(10,0) not null, 
+  ubicacion_id number(10,0) not null
 ) on commit delete rows;
 
-create global temporary table temp_conductor (
+--tabla contiene resultados estadisticos de los viajes de un usuario
+create global temporary table temp_estadistica (
   usuario_id number(10,0) not null, 
   username varchar2(40) not null, 
-  nombre varchar2(40) not null,
-  apellido_paterno varchar2(40) not null, 
-  email varchar2(40) not null, 
-  num_licencia varchar2(8) not null, 
-  placa varchar2(10) not null,
-  viaje_id number(10,0) not null,
-  propina number(6,2),
-  comentario varchar2(500),
-  calificacion number(1,0)
-) on commit delete rows;
-
-create global temporary table temp_ganancia (
-  usuario_id number(10,0) not null,
-  nombre varchar2(40) not null, 
-  apellido_paterno varchar2(40) not null, 
-  num_licencia varchar2(8) not null, 
-  num_cedula varchar2(18) not null,
-  foto blob not null, 
-  ganancia number(10,2) not null
+  num_viajes number(3,0) not null,
+  promedio_importe number(6,2) not null, 
+  suma_importe number(8,2) not null
 ) on commit delete rows;

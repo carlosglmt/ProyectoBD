@@ -1,6 +1,6 @@
 --@Autores: Andrés López Martínez y Carlos Gamaliel Morales Téllez
 --@Fecha creación: 02/06/2019
---@Descripción: Tabla externa Virtual Travel
+--@Descripción: Tablas externa Virtual Travel
 
 Prompt Conectando como usuario sys
 connect sys/system as sysdba
@@ -15,6 +15,8 @@ Prompt Conectando como usuario lm_proy_admin
 connect lm_proy_admin/admin
 
 Prompt Creando tabla externa
+--tabla contiene datos obtenidos de un archivo de texto, que podría ser
+--actualizado con frecuencia y es de interés para un conductor
 create table auto_recomendado(
   marca varchar2(20),
   modelo varchar2(20),
@@ -40,14 +42,42 @@ organization external(
 )
 reject limit unlimited;
 
+--tabla que contendrá datos que pueden o no cumplir con las reglas de negocio,
+--que serán validados antes de ser insertados en una tabla temporal
+create table ext_auto(
+  num_placas varchar2(10),
+  anio number(4,0),
+  usuario_id number(10,0),
+  modelo_id number(10,0),
+  ubicacion_id number(10,0)
+  )
+organization external(
+  type oracle_loader
+  default directory tmp_dir
+  access parameters(
+    records delimited by newline
+    badfile tmp_dir: 'ext_auto_bad.log'
+    logfile tmp_dir: 'ext_auto.log'
+    fields terminated by ','
+    lrtrim
+    missing field values are null
+    (
+      num_placas, anio, usuario_id, modelo_id, ubicacion_id
+    )
+  )
+  location ('ext_auto.csv')
+)
+reject limit unlimited;
+
 Prompt Creando directorio /tmp/bases
 !rm -rf /tmp/bases
 !mkdir -p /tmp/bases
 Prompt Cambiando permisos
 !chmod 777 /tmp/bases
 
-Prompt Copiando archivo csv a /tmp/bases
-!cp auto_recomendado.txt /tmp/bases
+Prompt Copiando archivos csv a /tmp/bases
+!cp ../dependencia_s04/auto_recomendado.txt /tmp/bases
+!cp ../dependencia_s04/ext_auto.csv /tmp/bases
 
 Prompt Mostrando los datos
 col marca format a10
