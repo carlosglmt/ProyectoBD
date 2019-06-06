@@ -45,7 +45,7 @@ reject limit unlimited;
 --tabla que contendrá datos que pueden o no cumplir con las reglas de negocio,
 --que serán validados antes de ser insertados en una tabla temporal
 create table ext_auto(
-  num_placas varchar2(10),
+  placa varchar2(10),
   anio number(4,0),
   usuario_id number(10,0),
   modelo_id number(10,0),
@@ -62,7 +62,7 @@ organization external(
     lrtrim
     missing field values are null
     (
-      num_placas, anio, usuario_id, modelo_id, ubicacion_id
+      placa, anio, usuario_id, modelo_id, ubicacion_id
     )
   )
   location ('ext_auto.csv')

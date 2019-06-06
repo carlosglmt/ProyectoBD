@@ -12,7 +12,7 @@ connect lm_proy_admin/admin
 --registros de temp_auto a auto.
 create global temporary table temp_auto (
   auto_id number(10,0) not null, 
-  num_placas varchar2(10) not null,
+  placa varchar2(10) not null,
   anio number(4,0) not null,
   usuario_id number(10,0) not null,
   modelo_id number(10,0) not null, 
