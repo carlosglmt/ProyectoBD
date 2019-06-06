@@ -29,6 +29,6 @@ grant create session,create table,
 	to rol_admin;
 grant rol_admin to lm_proy_admin;
 
-grant create session
+grant create session, create synonym
 	to rol_invitado;
 grant rol_invitado to lm_proy_invitado;

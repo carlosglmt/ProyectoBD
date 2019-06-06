@@ -21,10 +21,6 @@ grant select on lm_proy_admin.conductor to lm_proy_invitado;
 grant select on lm_proy_admin.auto to lm_proy_invitado;
 grant select on lm_proy_admin.ubicacion to lm_proy_invitado;
 
-connect sys/system as sysdba
-
-grant create synonym to lm_proy_invitado;
-
 connect lm_proy_invitado/invitado
 
 create or replace synonym conductor

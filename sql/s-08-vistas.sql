@@ -15,10 +15,11 @@ grant select on v_usuario to lm_proy_invitado;
 create or replace view v_conductor_pago (
   usuario_id, num_licencia, num_cedula, foto, descripcion, folio, fecha, monto
 ) as
-select c.usuario_id, c.num_licencia, c.num_cedula, c.foto, c.descripcion,
-  p.folio, p.fecha, p.monto
-from conductor c, pago p
-where c.usuario_id = p.usuario_id;
+select c.usuario_id, u.nombre, u.apellido_paterno, u.apellido_materno,
+  c.num_licencia, c.num_cedula, c.foto, c.descripcion, p.folio, p.fecha, p.monto
+from conductor c, pago p, usuario u
+where c.usuario_id = p.usuario_id
+and u.usuario_id = c.usuario_id;
 
 create or replace view v_factura (
   factura_id, importe_factura, fecha, viaje_id, hora_inicio, hora_fin,
