@@ -31,7 +31,8 @@ join (
   group by u.usuario_id
   order by numero_viajes, promedio_calificacion desc
   fetch first 10 rows only) q1
-on q1.usuario_id = c.usuario_id;
+on q1.usuario_id = c.usuario_id
+order by q1.promedio_calificacion;
 
 
 
