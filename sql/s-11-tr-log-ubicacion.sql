@@ -60,8 +60,7 @@ begin
     vacia_coleccion();
   end if;
 end before each row;
---inicia after statement
---aquí se hacen las inserciones de forma eficiente
+
 after statement is
 begin
   vacia_coleccion();
