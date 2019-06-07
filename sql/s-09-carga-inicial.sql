@@ -133,10 +133,12 @@ Prompt Creando directorio /tmp/bases
 !mkdir -p /tmp/bases 
 Prompt Cambiando permisos
 !chmod 777 /tmp/bases 
-
 !chmod 777 marcas.txt 
+!chmod 777 usuarios.txt
 
 Prompt Copiando archivo csv a /tmp/bases 
 !cp marcas.txt /tmp/bases 
+!cp usuarios.txt /tmp/bases
 
-exec sp_insertar_datos('marcas.txt','usuario');
+exec sp_insertar_datos('marcas.txt','marca');
+exec sp_insertar_datos('usuarios.txt','usuario');
