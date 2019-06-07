@@ -51,7 +51,7 @@ create table conductor(
 create table cliente (
 	usuario_id number(10,0) not null,
 	fecha_registro date default sysdate not null, 
-	num_celular numeric(13,0) not null,
+	num_celular number(13,0) not null,
 	constraint cliente_usuario_id_fk foreign key (usuario_id) 
 	references usuario(usuario_id),
 	constraint cliente_pk primary key (usuario_id)
