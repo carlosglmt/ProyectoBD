@@ -5,8 +5,6 @@
 connect lm_proy_admin/admin
 
 --se crean indices unique para los campos donde no se deben repetir valores
-create unique index usuario_username_iuk 
-  on usuario(username);
 create unique index usuario_email_iuk 
   on usuario(email);
 create unique index cliente_num_celular_iuk
@@ -16,16 +14,10 @@ create unique index conductor_num_cedula_iuk
 create unique index tarjeta_num_tarjeta_iuk
   on tarjeta(num_tarjeta);
 --se crean indices para campos que son usados comunmente en consultas
-create index usuario_username_ix
-  on usuario(username);
-create index usuario_email_ix
-  on usuario(email);
 create index conductor_num_licencia_ix
   on conductor(num_licencia);
 create index auto_num_placas_ix
-  on auto(num_placas);
-create index tarjeta_num_tarjeta_ix
-  on tarjeta(num_tarjeta);
+  on auto(placa);
 --se crean indices para campos que representan las fk de tablas que son
 --usadas frecuentemente con joins 
 create index viaje_usuario_id_ix

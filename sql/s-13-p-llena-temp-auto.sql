@@ -18,13 +18,9 @@ begin
   --se llena temp_auto
   for fila in cur_ext_auto loop
     begin
-    select auto_seq.currval into v_valor_secuencia
-    from dual;
     --dbms_output.put_line('valor antes: ' || v_valor_secuencia);
-    insert into temp_auto values(v_valor_secuencia + 1, fila.placa, fila.anio,
+    insert into temp_auto values(auto_seq.nextval, fila.placa, fila.anio,
       fila.usuario_id, fila.modelo_id, fila.ubicacion_id);
-    select auto_seq.nextval into v_valor_secuencia
-    from dual;
     --dbms_output.put_line('valor despues: ' || v_valor_secuencia);
     exception
       when others then
