@@ -1,5 +1,8 @@
-Ford#Es una buena opción#1
-Chevrolet#Otra buena opción#1
-Nissan#Una gran opción#2
-Honda#Buen arranque#1
-BMW#La mejor#1
+Mercedes-Benz#Es una buena opción#1
+Oldsmobile#Otra buena opción#1
+GMC#Una gran opción#2
+Mitsubishi#Buen arranque#1
+Ford#La mejor#1
+Infiniti#Buena opción#1
+Toyota#Buena opción x2#1
+Biuck#Buena opción x3#1

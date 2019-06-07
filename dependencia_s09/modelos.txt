@@ -1,0 +1,8 @@
+CLS-Class#"Poisoning by antiviral drugs, accidental, subs"#1
+Alero#"Idiopathic chronic gout, right shoulder, without tophus"#2
+Sierra 2500#"Unsp open wound of unsp toe(s) w damage to nail, init encntr"#3
+Montero#"Displaced transverse fx shaft of right ulna, sequela"#4
+Thunderbird#"Monoarthritis, not elsewhere classified, unspecified knee"#5
+QX#"Fourth [trochlear] nerve palsy, unspecified eye"#6
+Sienna#"Osteonecrosis due to previous trauma, unspecified finger(s)"#7
+Estate#"Retain (old) intraoc fb, nonmag, in oth or mult sites, r eye"#8

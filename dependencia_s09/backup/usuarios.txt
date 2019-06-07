@@ -1,0 +1,19 @@
+'pablo12'#'Pablo'#'Morales'#'Soto'#'pablo@email.com'#121116#0#1#1####5513111171#64879363#'l91092palskdjrut'#7E#'DESCRIPCION DEL EMPLEADO'
+'ricar122'#'Rich'#'Hernández'#'López'#'ric@email.com'#127777#0#1#1####5517711120#24879063#'58o392palskljrut'#7E#'DESCRIPCION DEL EMPLEADO'
+'marí123a'#'María'#'Díaz'#'Linares'#'maria@email.com'#525514#0#1#1####5511617130#62870363#'99o092pa2skda4ut'#7E#'DESCRIPCION DEL EMPLEADO'
+'martha23'#'Martha'#'Dan'#'Pérez'#'martha@email.com'#4411416#0#1#1####5511511274#24879163#'23an92palskdjrut'#7E#'DESCRIPCION DEL EMPLEADO'
+'betty123'#'Betty'#'Sanches'#'Díaz'#'betty@email.com'#333136#0#1#1####5511191175#21879063#'19g092pflgkdjrug'#7E#'DESCRIPCION DEL EMPLEADO'
+'perla12'#'Perla'#'López'#'Martínes'#'perla@email.com'#122256#0#0#1####5500000006
+'joaq29'#'Joaquín'#'Villa'#'Kennedy'#'juaq@email.com'#723457#0#0#1####5511111117
+'miguel30'#'Miguel'#'Pérez'#'Martínez'#'sindro86@email.com'#923459#0#0#1####5522222228
+'andres41'#'Andrés'#'López'#'Martinez'#'and@email.com'#823458#0#0#1####5533333339
+'omar58u'#'Omar'#'Ibarra'#'Badillo'#'omar@email.com'#523455#0#0#1####5544444440
+'julio612'#'Julio'#'Sanchez'#'Parker'#'jsp@email.com'#123456#0#0#1####5599999991
+'juani2135'#'Juan'#'López'#'Martínez'#'juan@email.com'#123456#1#0#1####5521544152#12456#7D
+'pedrito2132'#'Pedro'#'López'#'Ramírez'#'pedro@email.com'#654321#1#0#1####5555555523#65432#7D
+'beto900'#'Alberto'#'Díaz'#'Juarez'#'beto@email.com'#193726#1#0#1####5509090909#19124#7D
+'daniel1223'#'Daniel'#'Rand'#'Bonilla'#'daniel@email.com'#223496#1#0#1####557126235#114456#7D
+'jacinto99'#'Jacinto'#'Juarez'##'jacinto@email.com'#123456#1#0#1####5521562471#12356#7D
+'pepito'#'Roberto'#'Pepo'#'Lolito'#'pepito@email.com'#122910#0#1#0###61279373#'l91092pasdkukrp0'#7E#'DESCRIPCION DEL EMPLEADO'
+'jorgito'#'Jorge'#'Rodríguez'#'Campos'#'jorgito@email.com'#121116#0#1#0###64879363#'l91092pals7djrut'#7E#'DESCRIPCION DEL EMPLEADO'
+'campitos'#'George'#'Rodri'#'Campos'#'campitos@email.com'#255371#1#0#1###65739#7D

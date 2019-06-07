@@ -171,13 +171,14 @@ create table tarjeta (
 
 create table tarjeta_viaje(
 	tarjeta_viaje_id number(10,0) not null, 
-	porcentaje number(2,2) not null, 
+	porcentaje number(3,2) not null, 
 	viaje_id number(10,0) not null, 
 	tarjeta_id number(10,0) not null,
 	constraint tv_viaje_id_fk foreign key (viaje_id)
 	references viaje(viaje_id),
 	constraint tv_tarjeta_id_fk foreign key (tarjeta_id)
-	references tarjeta(tarjeta_id)
+	references tarjeta(tarjeta_id),
+	constraint tv_porcentaje_chk check (porcentaje <= 1.00)
 );
 
 create table pago (

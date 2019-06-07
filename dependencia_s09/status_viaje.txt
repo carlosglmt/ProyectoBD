@@ -1,0 +1,7 @@
+PROGRAMADO#Viaje programado
+CONFIRMADO#Viaje confirmado
+EN CURSO#Viaje en curso
+TERMINADO#Viaje terminado
+POR COBRAR#Viaje por cobrar
+PAGADO#Viaje pagado
+CANCELADO#Viaje cancelado

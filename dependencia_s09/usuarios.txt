@@ -14,5 +14,3 @@
 'beto900'#'Alberto'#'Díaz'#'Juarez'#'beto@email.com'#193726#1#0#1####5509090909#19121#7D
 'daniel1223'#'Daniel'#'Rand'#'Bonilla'#'daniel@email.com'#223496#1#0#1####557126237#114456#7D
 'jacinto99'#'Jacinto'#'Juarez'##'jacinto@email.com'#123456#1#0#1####5521562470#12356#7D
-
-
