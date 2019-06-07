@@ -189,3 +189,14 @@ create table pago (
 	references conductor(usuario_id),
 	constraint pago_pk primary key (usuario_id,folio)
 );
+
+create table ubicacion_log(
+	ubicacion_log_id number(10,0) not null,
+	ubicacion_id number(10,0) not null, 
+	longitud_anterior number(10,7) not null,
+	latitud_anterior number(10,7) not null,
+	longitud_nueva number(10,7) not null,
+	latitud_nueva number(10,7) not null,  
+	fecha_cambio date not null,
+	constraint ubicacion_log_pk primary key (ubicacion_log_id)
+);

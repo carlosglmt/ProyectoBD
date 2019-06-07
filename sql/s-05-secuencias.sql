@@ -80,3 +80,10 @@ create sequence tarjeta_viaje_seq
   nomaxvalue
   nocycle
   cache 10;
+
+create sequence ubicacion_log_seq
+  start with 1
+  increment by 1
+  nomaxvalue
+  nocycle
+  cache 10;
