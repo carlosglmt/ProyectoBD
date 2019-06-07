@@ -4,6 +4,7 @@
 
 connect lm_proy_admin/admin
 
+--se crean indices unique para los campos donde no se deben repetir valores
 create unique index usuario_username_iuk 
   on usuario(username);
 create unique index usuario_email_iuk 
@@ -14,6 +15,7 @@ create unique index conductor_num_cedula_iuk
   on conductor(num_cedula);
 create unique index tarjeta_num_tarjeta_iuk
   on tarjeta(num_tarjeta);
+--se crean indices para campos que son usados comunmente en consultas
 create index usuario_username_ix
   on usuario(username);
 create index usuario_email_ix
@@ -24,6 +26,8 @@ create index auto_num_placas_ix
   on auto(num_placas);
 create index tarjeta_num_tarjeta_ix
   on tarjeta(num_tarjeta);
+--se crean indices para campos que representan las fk de tablas que son
+--usadas frecuentemente con joins 
 create index viaje_usuario_id_ix
   on viaje(usuario_id);
 create index viaje_auto_id_ix
@@ -34,7 +38,8 @@ create index auto_ubicacion_id_ix
   on auto(ubicacion_id);
 create index tarjeta_usuario_id_ix
   on tarjeta(usuario_id);
-create index usuario_lower_username_ix
+--se crean indices basados en funciones comunes
+create index usuario_lower_nombre_ix
   on usuario(lower(nombre));
 create index cliente_fecha_ix
   on cliente(to_char(fecha_registro, 'dd/mm/yyyy')); 
