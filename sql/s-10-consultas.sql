@@ -23,7 +23,7 @@ from usuario u join conductor c
 on u.usuario_id = c.usuario_id
 join (
   select u.usuario_id as usuario_id, count(*) as numero_viajes,
-    sum(calificacion) as promedio_calificacion
+    avg(calificacion) as promedio_calificacion
   from usuario u join conductor c
   on u.usuario_id = c.usuario_id
   join auto a
@@ -36,5 +36,15 @@ join (
 on q1.usuario_id = c.usuario_id
 order by q1.promedio_calificacion;
 
-
+--consulta que obtiene a los usuarios existentes y usuarios que recomendaron, 
+--tambien los que no han recomendado a nadie
+select ue.usuario_id, ue.username, ur.usuario_id, ur.username
+from usuario ue left join usuario ur
+on ur.usuario_existente = ue.usuario_id
+where ue.descuento = 0
+intersect
+select ue.usuario_id, ue.username, ur.usuario_id, ur.username
+from usuario ue left join usuario ur
+on ur.usuario_existente = ue.usuario_id
+where ue.es_cliente = 1;
 
