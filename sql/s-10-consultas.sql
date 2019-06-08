@@ -41,7 +41,7 @@ order by q1.promedio_calificacion;
 select ue.usuario_id, ue.username, ur.usuario_id, ur.username
 from usuario ue left join usuario ur
 on ur.usuario_existente = ue.usuario_id
-where ue.descuento = 0
+where ue.descuento is null
 intersect
 select ue.usuario_id, ue.username, ur.usuario_id, ur.username
 from usuario ue left join usuario ur

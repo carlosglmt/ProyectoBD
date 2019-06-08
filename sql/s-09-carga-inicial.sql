@@ -83,6 +83,7 @@ begin
 				
 				--Si sólo es conductor, entonces inserta en la tabla conductor. 
 				elsif a_datos(8) = 1 then
+					dbms_output.put_line(a_datos(15));
 					insert into conductor(usuario_id,num_licencia,num_cedula,foto,descripcion)
 					values(usuario_seq.currval,a_datos(12),a_datos(13),hextoraw(a_datos(14)),a_datos(15));
 				
@@ -112,7 +113,7 @@ begin
 			elsif p_nombre_tabla = 'viaje' then
 				dbms_output.put_line(a_datos(1));
 				insert into viaje(viaje_id,latitud_origen,latitud_destino,longitud_origen,longitud_destino,importe,hora_inicio,hora_fin,propina,comentario,calificacion,fecha_status,usuario_id,auto_id,factura_id,status_viaje_id)
-				values (viaje_seq.nextval,a_datos(1),a_datos(2),a_datos(3),a_datos(4),a_datos(5),nvl(to_date(a_datos(6),'yyyy'),sysdate),nvl(a_datos(7),sysdate),a_datos(8),a_datos(9),a_datos(10),nvl(a_datos(11),sysdate),a_datos(12),a_datos(13),a_datos(14),a_datos(15));
+				values (viaje_seq.nextval,a_datos(1),a_datos(2),a_datos(3),a_datos(4),a_datos(5),nvl(to_date(a_datos(6),'dd/mm/yyyy hh24:mi:ss'),sysdate),nvl(to_date(a_datos(7),'dd/mm/yyyy hh24:mi:ss'),sysdate),a_datos(8),a_datos(9),a_datos(10),nvl(to_date(a_datos(11),'dd/mm/yyyy hh24:mi:ss'),sysdate),a_datos(12),a_datos(13),a_datos(14),a_datos(15));
 
 			elsif p_nombre_tabla = 'tarjeta' then
 				dbms_output.put_line(a_datos(1));
@@ -124,8 +125,6 @@ begin
 				values(tarjeta_viaje_seq.nextval,a_datos(1),a_datos(2),a_datos(3));
 			elsif p_nombre_tabla = 'pago' then
 				dbms_output.put_line(a_datos(1));
-				--insert into pago(usuario_id,folio,monto,fecha)
-				--values(a_datos(1),a_datos(2),a_datos(3),nvl(a_datos(4),sysdate));
 				insert into pago(usuario_id,folio,monto,fecha)
 				values(a_datos(1),a_datos(2),a_datos(3),nvl(a_datos(4),sysdate));
 			end if;
@@ -133,8 +132,8 @@ begin
     	exception
     		when No_Data_Found then  
     			exit;
-    		--when others then
-    			--raise;
+    		when others then
+    			raise;
     			--continue;
     end;
   end loop;
