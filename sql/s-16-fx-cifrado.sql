@@ -1,6 +1,7 @@
 --@Autores: Andrés López Martínez y Carlos Gamaliel Morales Téllez 
 --@Fecha creación: 07/06/2019
 --@Descripción: Generador de cifrado para contraseñas
+
 set serveroutput on
 create or replace function fx_cifrar_descifrar_clave(
 	p_clave_acceso varchar2, p_opcion varchar2

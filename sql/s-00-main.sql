@@ -31,8 +31,9 @@ end;
 /
 show errors
 Prompt inicializando
-connect lm_proy_admin/admin
+
 start s-01-usuarios.sql
+connect lm_proy_admin/admin
 start s-02-entidades.sql
 start s-03-tablas-temporales.sql
 start s-04-tablas-externas.sql

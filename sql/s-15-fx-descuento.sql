@@ -5,7 +5,7 @@
 set serveroutput on
 --funcion que recibe a un conductor, y regresa un bono basado en lo que el
 --conductor gano en el ultimo mes, solo si tiene buena calificacion
-create or replace function obten_bono(
+create or replace function obten_descuento(
   f_usuario_id number
 ) return number is
 

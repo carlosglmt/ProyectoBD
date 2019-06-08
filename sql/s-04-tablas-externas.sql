@@ -79,10 +79,10 @@ Prompt Copiando archivos csv a /tmp/bases
 !cp ../dependencia_s04/auto_recomendado.txt /tmp/bases
 !cp ../dependencia_s04/ext_auto.csv /tmp/bases
 
-Prompt Mostrando los datos
-col marca format a10
-col modelo format a15
-col razon format a50
-select * from auto_recomendado;
-Prompt _________________________________________________________
-select * from ext_auto;
+--Prompt Mostrando los datos
+--col marca format a10
+--col modelo format a15
+--col razon format a50
+--select * from auto_recomendado;
+--Prompt _________________________________________________________
+--select * from ext_auto;

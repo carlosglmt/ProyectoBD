@@ -2,8 +2,6 @@
 --@Fecha creación: 31/05/2019
 --@Descripción: DDL Virtual Travel
 
-connect lm_proy_admin/admin
-
 create table usuario(
 	usuario_id number(10,0) not null, 
 	username varchar2(40) not null, 

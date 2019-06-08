@@ -2,7 +2,6 @@
 --@Fecha creación: 03/06/2019
 --@Descripción: Carga inicial.
 
-connect lm_proy_admin/admin
 set serveroutput on
 create or replace procedure sp_insertar_datos(
 	p_nombre_archivo in varchar2, p_nombre_tabla in varchar2

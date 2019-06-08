@@ -2,9 +2,6 @@
 --@Fecha creación: 31/05/2019
 --@Descripción: Creacion de usuarios, roles, asignacion de permisos Virtual Travel
 
-prompt Conectando como usuario sys
-connect sys/system as sysdba
-
 prompt Creando al usuario lm_proy_invitado
 create user lm_proy_invitado
 	identified by invitado

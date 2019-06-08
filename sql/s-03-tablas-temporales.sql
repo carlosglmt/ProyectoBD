@@ -2,8 +2,6 @@
 --@Fecha creación: 02/06/2019
 --@Descripción: Tablas temporales Virtual Travel
 
-connect lm_proy_admin/admin
-
 --Esta tabla funciona como buffer entre auto y ext_auto.
 --Se creará una tabla externa con registros de autos que pueden o no cumplir
 --con las reglas de negocio. Luego estos registros se insertán en la tabla

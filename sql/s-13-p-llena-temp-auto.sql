@@ -2,8 +2,6 @@
 --@Fecha creación: 04/06/2019
 --@Descripción: Procedimiento Virtual Travel
 
-connect lm_proy_admin/admin
-
 set serveroutput on
 create or replace procedure sp_llena_temp_auto is
 
