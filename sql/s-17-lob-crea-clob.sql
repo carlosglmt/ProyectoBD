@@ -17,24 +17,28 @@ begin
   if dbms_lob.fileexists(l_bfile) = 1 and not 
       dbms_lob.isopen(l_bfile) = 1 then
         dbms_lob.open(l_bfile, dbms_lob.lob_readonly);
-  else 
-    raise_application_error(-20001, 'El archivo no existe
-      esta abierto');
+        DBMS_LOB.trim(p_clob, 0);
+
+        DBMS_LOB.loadclobfromfile (
+          dest_lob      => p_clob,
+          src_bfile     => l_bfile,
+          amount        => DBMS_LOB.lobmaxsize,
+          dest_offset   => l_dest_offset,
+          src_offset    => l_src_offset,
+          bfile_csid    => l_bfile_csid ,
+          lang_context  => l_lang_context,
+          warning       => l_warning
+        );
+        DBMS_LOB.fileclose(l_bfile);
+  else     
+    dbms_output.put_line('ERROR: El archivo no existe');
   end if;
-  --DBMS_LOB.fileopen(l_bfile, DBMS_LOB.file_readonly);
-  DBMS_LOB.trim(p_clob, 0);
-
-  DBMS_LOB.loadclobfromfile (
-    dest_lob      => p_clob,
-    src_bfile     => l_bfile,
-    amount        => DBMS_LOB.lobmaxsize,
-    dest_offset   => l_dest_offset,
-    src_offset    => l_src_offset,
-    bfile_csid    => l_bfile_csid ,
-    lang_context  => l_lang_context,
-    warning       => l_warning);
-  DBMS_LOB.fileclose(l_bfile);
-
+  exception
+      
+      when Value_Error then
+        dbms_output.put_line('ERROR: El archivo es inválido');
+      
+    
 end ;
 /
 

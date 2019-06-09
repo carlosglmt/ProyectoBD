@@ -50,10 +50,6 @@ begin
 				--values (auto_seq.nextval,a_datos(1),to_number(a_datos(2)),to_number(a_datos(3)),to_number(a_datos(4)),to_number(a_datos(5)));
 			
 			elsif p_nombre_tabla = 'usuario' then
-				dbms_output.put_line(a_datos(1));
-				v_contador_usuarios:= v_contador_usuarios+1;
-				dbms_output.put_line(v_contador_usuarios);
-
 				insert into usuario(usuario_id,username,nombre,apellido_paterno,apellido_materno,email,clave_acceso,es_administrador,es_conductor,es_cliente,descuento,usuario_existente)
 				values (usuario_seq.nextval,a_datos(1),a_datos(2),a_datos(3),a_datos(4),a_datos(5),a_datos(6),a_datos(7),a_datos(8),a_datos(9),to_number(a_datos(10)),to_number(a_datos(11)));
 				--Si es cliente y administrador, entonces inserta en la tabla cliente y administrador
@@ -82,7 +78,6 @@ begin
 				
 				--Si sólo es conductor, entonces inserta en la tabla conductor. 
 				elsif a_datos(8) = 1 then
-					dbms_output.put_line(a_datos(15));
 					insert into conductor(usuario_id,num_licencia,num_cedula,foto,descripcion)
 					values(usuario_seq.currval,a_datos(12),a_datos(13),hextoraw(a_datos(14)),a_datos(15));
 				
@@ -95,35 +90,28 @@ begin
 
 
 			elsif p_nombre_tabla = 'ubicacion' then
-				dbms_output.put_line(a_datos(1));
 				insert into ubicacion(ubicacion_id,longitud,latitud,disponible)
 				values(ubicacion_seq.nextval,a_datos(1),a_datos(2),a_datos(3));
 
 			elsif p_nombre_tabla = 'factura' then
-				dbms_output.put_line(a_datos(1));
 				insert into factura(factura_id,fecha,importe,xml)
 				values(factura_seq.nextval,nvl(a_datos(1),sysdate),a_datos(2),hextoraw(a_datos(3)));
 
 			elsif p_nombre_tabla = 'status_viaje' then
-				dbms_output.put_line(a_datos(1));
 				insert into status_viaje(status_viaje_id,clave,descripcion)
 				values(status_viaje_seq.nextval,a_datos(1),a_datos(2));
 
 			elsif p_nombre_tabla = 'viaje' then
-				dbms_output.put_line(a_datos(1));
 				insert into viaje(viaje_id,latitud_origen,latitud_destino,longitud_origen,longitud_destino,importe,hora_inicio,hora_fin,propina,comentario,calificacion,fecha_status,usuario_id,auto_id,factura_id,status_viaje_id)
 				values (viaje_seq.nextval,a_datos(1),a_datos(2),a_datos(3),a_datos(4),a_datos(5),nvl(to_date(a_datos(6),'dd/mm/yyyy hh24:mi:ss'),sysdate),nvl(to_date(a_datos(7),'dd/mm/yyyy hh24:mi:ss'),sysdate),a_datos(8),a_datos(9),a_datos(10),nvl(to_date(a_datos(11),'dd/mm/yyyy hh24:mi:ss'),sysdate),a_datos(12),a_datos(13),a_datos(14),a_datos(15));
 
 			elsif p_nombre_tabla = 'tarjeta' then
-				dbms_output.put_line(a_datos(1));
 				insert into tarjeta(tarjeta_id,num_tarjeta,anio_exp,mes_exp,usuario_id)
 				values (tarjeta_seq.nextval,a_datos(1),a_datos(2),a_datos(3),a_datos(4));
 			elsif p_nombre_tabla = 'tarjeta_viaje' then
-				dbms_output.put_line(a_datos(1));
 				insert into tarjeta_viaje(tarjeta_viaje_id,porcentaje,viaje_id,tarjeta_id)
 				values(tarjeta_viaje_seq.nextval,a_datos(1),a_datos(2),a_datos(3));
 			elsif p_nombre_tabla = 'pago' then
-				dbms_output.put_line(a_datos(1));
 				insert into pago(usuario_id,folio,monto,fecha)
 				values(a_datos(1),a_datos(2),a_datos(3),nvl(a_datos(4),sysdate));
 			end if;
