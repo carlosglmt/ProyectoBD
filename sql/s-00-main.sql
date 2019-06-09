@@ -48,6 +48,8 @@ start s-11-tr-valida-tarjeta.sql
 start s-13-p-llena-temp-auto.sql
 start s-13-p-llena-temp-estadistica.sql
 start s-15-fx-bono.sql
+start s-15-fx-descuento.sql
+start s-15-fx-cifrado.sql
 start s-09-carga-inicial.sql
 
 connect lm_proy_admin/admin
