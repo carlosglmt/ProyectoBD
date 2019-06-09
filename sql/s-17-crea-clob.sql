@@ -9,7 +9,7 @@ create or replace procedure file_to_clob (
   l_lang_context number := 0;
   l_warning number := 0;
 begin
-  l_bfile := bfilename('DIR_TEMP', p_nombre_archivo);
+  l_bfile := bfilename('TMP_DIR', p_nombre_archivo);
   DBMS_LOB.fileopen(l_bfile, DBMS_LOB.file_readonly);
   DBMS_LOB.trim(p_clob, 0);
 

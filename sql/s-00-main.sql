@@ -47,9 +47,11 @@ start s-11-tr-valida-auto.sql
 start s-11-tr-valida-tarjeta.sql
 start s-13-p-llena-temp-auto.sql
 start s-13-p-llena-temp-estadistica.sql
+start s-13-p-genera-xml.sql
 start s-15-fx-bono.sql
 start s-15-fx-descuento.sql
 start s-15-fx-cifrado.sql
+start s-17-crea-clob.sql
 start s-09-carga-inicial.sql
 
 connect lm_proy_admin/admin
@@ -64,5 +66,7 @@ exec sp_insertar_datos('status_viaje.txt','status_viaje');
 exec sp_insertar_datos('viaje.txt','viaje');
 exec sp_insertar_datos('tarjeta.txt','tarjeta');
 exec sp_insertar_datos('tarjeta-viaje.txt','tarjeta_viaje');
-
+exec sp_genera_xml(1,to_date('08/09/2016','dd/mm/yyyy'),sysdate);
+select fx_cifrar_descifrar_clave('Hola, mundo','c') from dual;
+select fx_cifrar_descifrar_clave('A661C672912AF44AB3D180FDDFA09583','d') from dual;
 Prompt Listo!

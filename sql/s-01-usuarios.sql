@@ -24,6 +24,11 @@ grant create session,create table,
 	create trigger,create sequence,
 	create procedure 
 	to rol_admin;
+
+
+grant execute on dbms_crypto to rol_admin;
+grant execute on dbms_crypto to lm_proy_admin;
+
 grant rol_admin to lm_proy_admin;
 
 grant create session, create synonym
