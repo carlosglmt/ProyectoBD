@@ -2,8 +2,6 @@
 --@Fecha creación: 31/05/2019
 --@Descripción: DDL Virtual Travel
 
-connect lm_proy_admin/admin
-
 create table usuario(
 	usuario_id number(10,0) not null, 
 	username varchar2(40) not null, 
@@ -15,7 +13,7 @@ create table usuario(
 	es_administrador number(1,0) not null, 
 	es_conductor number(1,0) not null, 
 	es_cliente number(1,0) not null, 
-	descuento number(6,2) default 0,
+	descuento number(6,2) default on null 0,
 	usuario_existente number(10,0),
 	constraint usuario_pk primary key (usuario_id),
 	constraint usuario_username_uk unique (username),

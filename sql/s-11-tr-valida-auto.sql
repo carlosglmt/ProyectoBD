@@ -2,8 +2,6 @@
 --@Fecha creación: 04/06/2019
 --@Descripción: Trigger Virtual Travel
 
-connect lm_proy_admin/admin
-
 set serveroutput on
 
 create or replace trigger tr_valida_auto

@@ -2,8 +2,6 @@
 --@Fecha creación: 03/06/2019
 --@Descripción: Vistas Virtual Travel
 
-connect lm_proy_admin/admin
-
 create or replace view v_usuario (
   usuario_id, username, nombre, apellido_paterno, email, descuento
 ) as

@@ -1,13 +1,11 @@
 --@Autores: Andrés López Martínez y Carlos Gamaliel Morales Téllez
---@Fecha creación: 06/06/2019
+--@Fecha creación: 07/06/2019
 --@Descripción: Funcion Virtual Travel
-
-connect lm_proy_admin/admin
 
 set serveroutput on
 --funcion que recibe a un conductor, y regresa un bono basado en lo que el
 --conductor gano en el ultimo mes, solo si tiene buena calificacion
-create or replace function obten_bono(
+create or replace function fx_obten_bono(
   f_usuario_id number
 ) return number is
 

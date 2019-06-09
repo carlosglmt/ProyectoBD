@@ -2,8 +2,6 @@
 --@Fecha creación: 06/06/2019
 --@Descripción: Trigger Virtual Travel
 
-connect lm_proy_admin/admin
-
 set serveroutput on
 
 create or replace trigger tr_actualiza_historico

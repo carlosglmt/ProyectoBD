@@ -2,8 +2,6 @@
 --@Fecha creación: 06/06/2019
 --@Descripción: Consultas Virtual Travel
 
-connect lm_proy_admin/admin
-
 --Consulta para llenar temp_estadistica, sera utilizada en un procedimiento
 select u.usuario_id, u.username, count(*) as numero_viajes,
   avg(v.importe) as promedio, sum(v.importe) as total

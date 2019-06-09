@@ -2,8 +2,6 @@
 --@Fecha creación: 02/06/2019
 --@Descripción: Secuencias Virtual Travel
 
-connect lm_proy_admin/admin
-
 create sequence usuario_seq
   start with 1
   increment by 1

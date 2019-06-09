@@ -2,8 +2,6 @@
 --@Fecha creación: 03/06/2019
 --@Descripción: Indíces Virtual Travel
 
-connect lm_proy_admin/admin
-
 --se crean indices unique para los campos donde no se deben repetir valores
 create unique index usuario_email_iuk 
   on usuario(email);
