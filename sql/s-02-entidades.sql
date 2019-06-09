@@ -103,7 +103,7 @@ create table factura (
 	factura_id number(10,0) not null, 
 	fecha date default sysdate not null, 
 	importe number(7,2) not null, 
-	xml blob not null, 
+	xml clob not null, 
 	constraint factura_pk primary key (factura_id)
 );
 

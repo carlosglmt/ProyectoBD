@@ -39,7 +39,5 @@ end;
 /
 show errors
 
-!rm -rf /tmp/bases
-!mkdir -p /tmp/bases
-!chmod 777 /tmp/bases 
+
 
