@@ -46,23 +46,7 @@ from usuario ue left join usuario ur
 on ur.usuario_existente = ue.usuario_id
 where ue.es_cliente = 1;
 
---Consulta para generar el xml
-
-select  c.usuario_id, v.viaje_id, v.fecha_status,v.importe,
-  t.NUM_TARJETA, tv.PORCENTAJE,v.PROPINA,sum(v.importe) as total_importes,
-  sum(v.PROPINA) as total_propinas
-from viaje v
-join tarjeta_viaje tv
-on v.viaje_id = tv.viaje_id
-join tarjeta t
-on tv.tarjeta_id = t.TARJETA_ID
-join cliente c
-on t.USUARIO_ID = c.USUARIO_ID
-where c.USUARIO_ID=1
-and v.FECHA_STATUS between to_date('08/09/2016','dd/mm/yyyy') and
-  to_date('06/07/2019','dd/mm/yyyy')
- group by c.usuario_id, v.viaje_id, v.fecha_status,v.importe,
-  t.NUM_TARJETA, tv.PORCENTAJE,v.PROPINA;
+--consulta para generar el xml
 
 select xmlagg(
       xmlelement("viaje",
