@@ -1,5 +1,0 @@
-Ford#Es una buena opción#1
-Chevrolet#Otra buena opción#1
-Nissan#Una gran opción#2
-Honda#Buen arranque#1
-BMW#La mejor#1
