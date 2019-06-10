@@ -21,6 +21,9 @@ begin
     raise_application_error(-20003, 'No se pueden registrar más de 3 tarjetas
       por cliente.');
   end if;
+  if to_date(:new.mes_exp || '/' || :new.anio_exp, 'mm/yy') < sysdate then
+    raise_application_error(-20030, 'La tarjeta ha expirado.');
+  end if;
 end;
 /
 show errors
