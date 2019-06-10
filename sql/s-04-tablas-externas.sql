@@ -47,8 +47,8 @@ reject limit unlimited;
 create table ext_auto(
   placa varchar2(10),
   anio number(4,0),
-  usuario_id number(10,0),
   modelo_id number(10,0),
+  usuario_id number(10,0),
   ubicacion_id number(10,0)
   )
 organization external(
@@ -62,7 +62,7 @@ organization external(
     lrtrim
     missing field values are null
     (
-      placa, anio, usuario_id, modelo_id, ubicacion_id
+      placa, anio, modelo_id, usuario_id, ubicacion_id
     )
   )
   location ('ext_auto.csv')

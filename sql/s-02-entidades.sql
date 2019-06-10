@@ -164,7 +164,7 @@ create table tarjeta (
 	usuario_id number(10,0) not null, 
 	constraint tarjeta_pk primary key (tarjeta_id),
 	constraint tarjeta_usuario_id_fk foreign key (usuario_id)
-	references usuario(usuario_id)
+	references cliente(usuario_id)
 );
 
 create table tarjeta_viaje(

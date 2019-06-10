@@ -12,8 +12,8 @@ create global temporary table temp_auto (
   auto_id number(10,0) not null, 
   placa varchar2(10) not null,
   anio number(4,0) not null,
+  modelo_id number(10,0) not null,
   usuario_id number(10,0) not null,
-  modelo_id number(10,0) not null, 
   ubicacion_id number(10,0)
 ) on commit delete rows;
 
