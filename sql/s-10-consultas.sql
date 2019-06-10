@@ -29,10 +29,10 @@ join (
   join viaje v
   on a.auto_id = v.auto_id
   group by u.usuario_id
-  order by numero_viajes, promedio_calificacion desc
+  order by numero_viajes desc
   fetch first 10 rows only) q1
 on q1.usuario_id = c.usuario_id
-order by q1.promedio_calificacion;
+order by q1.promedio_calificacion desc;
 
 --consulta que obtiene a los usuarios existentes y usuarios que recomendaron, 
 --tambien los que no han recomendado a nadie

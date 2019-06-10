@@ -3,8 +3,8 @@
 --@Descripción: Funcion Virtual Travel
 
 set serveroutput on
---funcion que recibe a un conductor, y regresa un bono basado en lo que el
---conductor gano en el ultimo mes, solo si tiene buena calificacion
+--funcion que recibe a un usuario, y otorga un descuento segun el número de
+--recomendaciones que hizo ese usuario
 create or replace function fx_obten_descuento(
   f_usuario_id number
 ) return number is
