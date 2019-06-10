@@ -16,5 +16,5 @@ select * from ubicacion_log where ubicacion_id = 1;
 
 Prompt OK, prueba 1 exitosa.
 
-Prompt Prueba concluida, Haciendo Rollback para limpiar la BD.
+Prompt Prueba concluidas, se hace rollback
 rollback;

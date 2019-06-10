@@ -94,7 +94,7 @@ create table auto (
 	constraint auto_modelo_id_fk foreign key (modelo_id)
 	references modelo (modelo_id),
 	constraint auto_usuario_id_fk foreign key (usuario_id)
-  references usuario (usuario_id),
+  references conductor (usuario_id),
 	constraint auto_ubicacion_id foreign key (ubicacion_id)
   references ubicacion (ubicacion_id)
 );
