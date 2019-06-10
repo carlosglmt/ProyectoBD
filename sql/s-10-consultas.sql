@@ -64,3 +64,14 @@ select xmlagg(
   and v.FECHA_STATUS 
     between to_date('08/09/2016','dd/mm/yyyy') and
   to_date('06/07/2019','dd/mm/yyyy');
+
+--En caso de que se desee obtener los datos de los conductores que 
+--también son clientes se puede aplicar la cunsulta con 
+--natural join.
+
+select usuario_id,vu.nombre,vu.apellido_paterno,
+  vu.email,c.num_licencia,c.num_cedula,cli.num_celular,t.num_tarjeta
+from v_usuario vu
+natural join conductor c
+natural join cliente cli
+natural join tarjeta t
