@@ -18,7 +18,7 @@ begin
     begin
     --dbms_output.put_line('valor antes: ' || v_valor_secuencia);
     insert into temp_auto values(auto_seq.nextval, fila.placa, fila.anio,
-      fila.usuario_id, fila.modelo_id, fila.ubicacion_id);
+      fila.modelo_id, fila.usuario_id, fila.ubicacion_id);
     --dbms_output.put_line('valor despues: ' || v_valor_secuencia);
     exception
       when others then
@@ -34,8 +34,8 @@ begin
   end loop;
   dbms_output.put_line('Registros no insertados: ' || v_num_registros);
   --se llena auto
-  insert into auto(auto_id, placa, anio, usuario_id, modelo_id,ubicacion_id)
-  select auto_id, placa, anio, usuario_id, modelo_id, ubicacion_id
+  insert into auto(auto_id, placa, anio, modelo_id, usuario_id,ubicacion_id)
+  select auto_id, placa, anio, modelo_id, usuario_id, ubicacion_id
   from temp_auto;
 end;
 /
