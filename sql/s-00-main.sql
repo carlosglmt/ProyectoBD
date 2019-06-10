@@ -67,11 +67,5 @@ exec sp_insertar_datos('status_viaje.txt','status_viaje');
 exec sp_insertar_datos('viaje.txt','viaje');
 exec sp_insertar_datos('tarjeta.txt','tarjeta');
 exec sp_insertar_datos('tarjeta-viaje.txt','tarjeta_viaje');
-Prompt INICIANDO PRUEBA DEL GENERADOR XML
-start s-14-p-genera-xml-prueba.sql
-start s-16-fx-cifrado-prueba.sql
-Prompt INICIANDO PRUEBA LOB
-start s-18-lob-crea-clob-prueba.sql
-Prompt Listo!
 
 commit;
