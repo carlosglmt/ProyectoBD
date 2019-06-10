@@ -26,3 +26,5 @@ begin
 end;
 /
 show errors
+select factura_id,dbms_lob.getlength(xml)
+from factura where factura_id = 1;

@@ -69,8 +69,9 @@ exec sp_insertar_datos('tarjeta.txt','tarjeta');
 exec sp_insertar_datos('tarjeta-viaje.txt','tarjeta_viaje');
 Prompt INICIANDO PRUEBA DEL GENERADOR XML
 start s-14-p-genera-xml-prueba.sql
-select fx_cifrar_descifrar_clave('Hola, mundo','c') from dual;
-select fx_cifrar_descifrar_clave('A661C672912AF44AB3D180FDDFA09583','d') from dual;
+start s-16-fx-cifrado-prueba.sql
 Prompt INICIANDO PRUEBA LOB
 start s-18-lob-crea-clob-prueba.sql
 Prompt Listo!
+
+commit;

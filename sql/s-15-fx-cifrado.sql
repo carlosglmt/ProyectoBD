@@ -50,8 +50,8 @@ end;
 /
 show errors
 
-select fx_cifrar_descifrar_clave('Hola, mundo','c') from dual;
-select fx_cifrar_descifrar_clave('A661C672912AF44AB3D180FDDFA09583','d') from dual;
+--select fx_cifrar_descifrar_clave('Hola, mundo','c') from dual;
+--select fx_cifrar_descifrar_clave('A661C672912AF44AB3D180FDDFA09583','d') from dual;
 
 
 
