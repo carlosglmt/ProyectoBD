@@ -10,15 +10,16 @@ from usuario;
 
 grant select on v_usuario to lm_proy_invitado;
 
+--Vista pensada para que el conductor pueda ver sus pagos. 
 create or replace view v_conductor_pago (
   usuario_id, nombre, apellido_paterno, apellido_materno, num_licencia,
   num_cedula, descripcion, folio, fecha, monto
 ) as
-select c.usuario_id, u.nombre, u.apellido_paterno, u.apellido_materno,
+select usuario_id, u.nombre, u.apellido_paterno, u.apellido_materno,
   c.num_licencia, c.num_cedula, c.descripcion, p.folio, p.fecha, p.monto
-from conductor c, pago p, usuario u
-where c.usuario_id = p.usuario_id
-and u.usuario_id = c.usuario_id;
+from conductor c
+natural join pago p
+natural join usuario u;
 
 create or replace view v_factura (
   factura_id, importe_factura, fecha, viaje_id, hora_inicio, hora_fin,
