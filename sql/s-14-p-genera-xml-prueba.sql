@@ -8,12 +8,20 @@ declare
 begin 
 	--ADVERTENCIA: Antes de realizar esta prueba, asegurarse de haber ejecutado 
 	--la carga inicial primero. 
-
+	dbms_output.put_line('==============================');
+	dbms_output.put_line('Prueba 1');
+	dbms_output.put_line('==============================');
 	dbms_output.put_line('Enviando datos válidos');
 	sp_genera_xml(1,to_date('08/09/2016','dd/mm/yyyy'),sysdate);
 	sp_genera_xml(2,to_date('08/09/2016','dd/mm/yyyy'),sysdate);
+	dbms_output.put_line('==============================');
+	dbms_output.put_line('Prueba 2');
+	dbms_output.put_line('==============================');
 	dbms_output.put_line('Enviando datos con usuario_id inexistente');
 	sp_genera_xml(100,to_date('08/09/2016','dd/mm/yyyy'),sysdate);
+	dbms_output.put_line('==============================');
+	dbms_output.put_line('Prueba 3');
+	dbms_output.put_line('==============================');
 	dbms_output.put_line('Enviando fechas al revés');
 	sp_genera_xml(2,sysdate,to_date('08/09/2016','dd/mm/yyyy'));
 

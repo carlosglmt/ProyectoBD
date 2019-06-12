@@ -35,7 +35,7 @@ cursor cur_tablas is
 
 begin 
 	for r in cur_tablas loop 
-		execute immediate 'create or replace synonym XX_'
+		execute immediate 'create or replace synonym lm_'
 			|| r.table_name
 			|| ' for '
 			|| r.table_name;

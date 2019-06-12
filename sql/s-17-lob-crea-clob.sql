@@ -33,12 +33,16 @@ begin
   else     
     dbms_output.put_line('ERROR: El archivo no existe');
   end if;
+
+  
   exception
       
       when Value_Error then
         dbms_output.put_line('ERROR: El archivo es inválido');
-      
-    
+      when others then
+        dbms_output.put_line('Error no esperado');
+        raise;    
+  
 end ;
 /
 

@@ -9,6 +9,10 @@ cursor cur_claves is
 	from usuario;
 
 begin 
+	dbms_output.put_line('==============================');
+	dbms_output.put_line('Prueba de cifrado');
+	dbms_output.put_line('==============================');
+
 	for r in cur_claves loop
 		dbms_output.put_line('Original: ' || r.original);
 		dbms_output.put_line('Cifrada: ' || r.cifrada);

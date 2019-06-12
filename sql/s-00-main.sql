@@ -67,5 +67,17 @@ exec sp_insertar_datos('status_viaje.txt','status_viaje');
 exec sp_insertar_datos('viaje.txt','viaje');
 exec sp_insertar_datos('tarjeta.txt','tarjeta');
 exec sp_insertar_datos('tarjeta-viaje.txt','tarjeta_viaje');
+exec sp_genera_xml(1,to_date('10/02/2015','dd/mm/yyyy'),sysdate);
 
+  
 commit;
+start s-12-tr-actualiza-historico-prueba.sql
+start s-12-tr-log-ubicacion-prueba.sql
+start s-12-tr-valida-auto-prueba.sql
+start s-12-tr-valida-tarjeta-prueba.sql
+start s-14-p-genera-xml-prueba.sql
+start s-14-p-llena-temp-estadistica-prueba.sql
+start s-16-fx-bono-prueba.sql
+start s-16-fx-cifrado-prueba.sql
+start s-16-fx-descuento-prueba.sql
+start s-18-lob-crea-clob-prueba.sql
